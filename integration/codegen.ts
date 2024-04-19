@@ -38,6 +38,7 @@ async function generate(binFile: string, baseDir: string, parameter: string) {
     }
     const utils = makeUtils(options);
     const ctx: Context = { options, typeMap, utils };
+    // deepcode ignore PrototypePollution: Not used by final user
     const [path, code] = generateFile(ctx, file);
     const filePath = `${baseDir}/${path}`;
     const dirPath = parse(filePath).dir;
